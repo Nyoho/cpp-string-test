@@ -10,11 +10,12 @@ CPPFLAGS += -Wall -I/usr/include/c++/4.2.1
 LDFLAGS += -std=c++11 -stdlib=libstdc++
 ```
 
-ここで `-I/usr/include/c++/4.2.1` を外すとエラーが取れる。
+1. ここで `-I/usr/include/c++/4.2.1` を外すとエラーが取れる。
+2. `-stdlib=libstdc++` はつけてもつけなくてもエラー。
+3. `-mmacosx-version-min=10.8` としてもエラー
+3. `-mmacosx-version-min=10.9` (-I と libstdc++ なし)ならエラーが取れる
 
-`-stdlib=libstdc++` はつけてもつけなくてもエラー。
-
-
+ 
 ```
 #include <ext/codecvt_specializations.h>
 ```
